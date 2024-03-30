@@ -25,6 +25,7 @@ import {
     RocketLaunchIcon,
     Bars2Icon,
 } from "@heroicons/react/24/solid";
+import { SearchBar } from "./Dashboard/SearchBar";
 
 // profile menu component
 const profileMenuItems = [
@@ -65,7 +66,7 @@ function ProfileMenu() {
                 >
                     <Avatar
                         variant="circular"
-                        size="sm"
+                        size="lg"
                         alt="tania andrew"
                         className="border border-gray-900 p-0.5"
                         src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
@@ -129,13 +130,16 @@ export function ComplexNavbar() {
     }, []);
 
     return (
-        <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
-            <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
+        <Navbar className="mx-auto max-w-screen-xl p-1 lg:rounded-full lg:pl-6 my-2">
+            <div className="relative flex items-center justify-between text-blue-gray-900">
 
-                <div className="hidden lg:block">
+                <div className="hidden w-[50%] bottom lg:block">
+                    <SearchBar></SearchBar>
                 </div>
+
+
                 <IconButton
-                    size="sm"
+                    size="lg"
                     color="blue-gray"
                     variant="text"
                     onClick={toggleIsNavOpen}
@@ -147,7 +151,15 @@ export function ComplexNavbar() {
                 {/* <Button size="sm" variant="text">
                     <span>Log In</span>
                 </Button> */}
-                <ProfileMenu />
+                <MobileNav open={isNavOpen} >
+
+                    <SearchBar></SearchBar>
+
+                </MobileNav>
+                <div className="w-40">
+                    <ProfileMenu />
+                </div>
+
             </div>
 
         </Navbar>
