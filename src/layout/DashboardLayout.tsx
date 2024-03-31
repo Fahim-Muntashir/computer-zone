@@ -1,5 +1,5 @@
 
-import { Button } from '@material-tailwind/react';
+import { Outlet } from 'react-router-dom';
 import logo from '../assets/log.png'
 import { ComplexNavbar } from '../components/DashBoardNav';
 const DashboardLayout = () => {
@@ -10,13 +10,17 @@ const DashboardLayout = () => {
                 <div>
                     <img src={logo} className='w-[80%] mx-auto' alt="" />
 
-                    <Button>Button</Button>
                 </div>
 
             </div>
             <div className="col-span-10 w-full h-full">
 
-                <ComplexNavbar></ComplexNavbar>
+                <div>
+                    <ComplexNavbar></ComplexNavbar>
+                </div>
+                <div>
+                    <Outlet></Outlet>
+                </div>
             </div>
         </div>
 

@@ -9,20 +9,17 @@ import {
     MenuList,
     MenuItem,
     Avatar,
-    Card,
     IconButton,
 } from "@material-tailwind/react";
 import {
-    CubeTransparentIcon,
+
     UserCircleIcon,
-    CodeBracketSquareIcon,
-    Square3Stack3DIcon,
+
     ChevronDownIcon,
     Cog6ToothIcon,
     InboxArrowDownIcon,
     LifebuoyIcon,
     PowerIcon,
-    RocketLaunchIcon,
     Bars2Icon,
 } from "@heroicons/react/24/solid";
 import { SearchBar } from "./Dashboard/SearchBar";
@@ -60,11 +57,13 @@ function ProfileMenu() {
         <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
             <MenuHandler>
                 <Button
+                    placeholder={""}
                     variant="text"
                     color="blue-gray"
                     className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
                 >
                     <Avatar
+                        placeholder={""}
                         variant="circular"
                         size="lg"
                         alt="tania andrew"
@@ -97,6 +96,7 @@ function ProfileMenu() {
                                 strokeWidth: 2,
                             })}
                             <Typography
+                                placeholder={""}
                                 as="span"
                                 variant="small"
                                 className="font-normal"
@@ -130,7 +130,7 @@ export function ComplexNavbar() {
     }, []);
 
     return (
-        <Navbar className="mx-auto max-w-screen-xl p-1 lg:rounded-full lg:pl-6 my-2">
+        <Navbar placeholder={""} className="mx-auto max-w-screen-xl p-1 lg:rounded-full lg:pl-6 my-2">
             <div className="relative flex items-center justify-between text-blue-gray-900">
 
                 <div className="hidden w-[50%] bottom lg:block">
@@ -139,6 +139,7 @@ export function ComplexNavbar() {
 
 
                 <IconButton
+                    placeholder={""}
                     size="lg"
                     color="blue-gray"
                     variant="text"
