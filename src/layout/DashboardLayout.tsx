@@ -1,24 +1,23 @@
 
 import { Outlet } from 'react-router-dom';
-import logo from '../assets/log.png'
 import { ComplexNavbar } from '../components/DashBoardNav';
+import { Sidebar } from '../components/Dashboard/Sidebar';
 const DashboardLayout = () => {
     return (
         <div className="grid grid-cols-12 h-screen">
-            <div className="col-span-2 bg-indigo-900 h-full">
+            <div className="hidden lg:block lg:col-span-3 relative h-full">
 
-                <div>
-                    <img src={logo} className='w-[80%] mx-auto' alt="" />
-
+                <div className='fixed lg:z-10 lg:block '>
+                    <Sidebar></Sidebar>
                 </div>
 
             </div>
-            <div className="col-span-10 w-full h-full">
+            <div className="col-span-12 md:col-span-12  lg:col-span-9 h-full relative">
 
-                <div>
+                <div className='sticky top-0 z-10'>
                     <ComplexNavbar></ComplexNavbar>
                 </div>
-                <div>
+                <div className=''>
                     <Outlet></Outlet>
                 </div>
             </div>

@@ -1,4 +1,6 @@
 import { CardWithLink } from "../../components/Dashboard/Overview/Card";
+import TotalProfit from "../../components/Dashboard/Overview/TotalProfit";
+import TotalSales from "../../components/Dashboard/Overview/TotalSales";
 
 
 const Overview = () => {
@@ -9,6 +11,11 @@ const Overview = () => {
                 <CardWithLink></CardWithLink>
                 <CardWithLink></CardWithLink>
                 <CardWithLink></CardWithLink>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-1 grid-cols-1 ">
+                <TotalSales></TotalSales>
+                <TotalProfit></TotalProfit>
+
             </div>
         </div>
     );
