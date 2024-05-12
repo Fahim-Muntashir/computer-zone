@@ -39,7 +39,7 @@ export function Sidebar() {
     return (
         <Card className="h-screen w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
             <div className="mb-2 p-4">
-                <img src={logo} alt="" />
+                <img src={logo} alt="logo" className="w-3/4 " />
 
             </div>
             <List>

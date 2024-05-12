@@ -4,11 +4,18 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import router from './routes/routes.tsx'
 import { ThemeProvider } from '@material-tailwind/react'
+import { Provider } from 'react-redux'
+import { persistor, store } from './redux/store.ts'
+import { PersistGate } from 'redux-persist/integration/react'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <RouterProvider router={router} />
+        </PersistGate>
+      </Provider>
     </ThemeProvider>
   </React.StrictMode>,
 )
