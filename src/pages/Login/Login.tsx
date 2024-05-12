@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/log1.png'
 import { useForm } from 'react-hook-form';
 import { useLoginMutation } from '../../redux/features/auth/authApi';
@@ -8,6 +8,8 @@ import { setUser } from '../../redux/features/auth/authSlice';
 import { verifyToken } from '../../utils/verifyToken';
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     const dispatch = useAppDispatch();
 
@@ -29,13 +31,12 @@ const Login = () => {
             password: data.password,
         }
         const res = await login(userInfo).unwrap();
-
         const user = verifyToken(res.data.accessToken)
-        console.log(user);
-        console.log(res);
         dispatch(setUser({
             user: user, token: res.data.accessToken,
         }))
+        navigate('/dashboard')
+
     };
 
 

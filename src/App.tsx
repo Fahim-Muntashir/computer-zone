@@ -1,10 +1,14 @@
 import DashboardLayout from './layout/DashboardLayout'
+import ProtectedRoute from './layout/ProtectedRoute'
 
 function App() {
 
   return (
     <>
-      <DashboardLayout></DashboardLayout>
+      <ProtectedRoute>
+
+        <DashboardLayout></DashboardLayout>
+      </ProtectedRoute>
     </>
   )
 }
