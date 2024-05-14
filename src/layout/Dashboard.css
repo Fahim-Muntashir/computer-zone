@@ -1,0 +1,6 @@
+@media (min-width: 1024px) {
+    .lg\:col-span-3 {
+        width: 240px;
+        height: 100vh;
+    }
+}

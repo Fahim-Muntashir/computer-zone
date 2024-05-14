@@ -35,7 +35,7 @@ const Login = () => {
         dispatch(setUser({
             user: user, token: res.data.accessToken,
         }))
-        navigate('/dashboard')
+        navigate('/')
 
     };
 
