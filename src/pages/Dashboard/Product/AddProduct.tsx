@@ -1,27 +1,16 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { useProductMutation } from '../../../redux/features/product/productApi';
+import { usePostProductMutation } from '../../../redux/features/product/productApi';
+import { TInputs } from '../../../Types';
 
-type Inputs = {
-    name: string;
-    price: number;
-    quantity: number;
-    category: string;
-    brand: string;
-    compatibility: string;
-    interfaceType?: string[];
-    condition?: string;
-    capacity?: string;
-    color?: string;
-    formFactor?: string;
-};
+
 const ProductForm: React.FC = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<Inputs>({
+    } = useForm<TInputs>({
         defaultValues: {
             "name": "Example Product",
             "price": 99.99,
@@ -37,13 +26,13 @@ const ProductForm: React.FC = () => {
         }
     });
 
-    const [addProduct, { error }] = useProductMutation();
+    const [addProduct, { error }] = usePostProductMutation();
 
     if (error) {
         console.log("error");
     }
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<TInputs> = (data) => {
 
         const res = addProduct(data)
 

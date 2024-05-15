@@ -1,9 +1,14 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 
 import withMT from "@material-tailwind/react/utils/withMT";
 
 export default withMT({
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/flowbite-react/lib/esm/**/*.js",
+  ],
   theme: {
     colors: {
       primary: "#5c6ac4",
@@ -12,5 +17,6 @@ export default withMT({
       // ...
     },
   },
-  plugins: [],
+
+  plugins: [require("flowbite/plugin")],
 });

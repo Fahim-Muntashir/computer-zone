@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
-import AddProduct from "../components/Dashboard/Product/AddProduct";
+import AddProduct from "../pages/Dashboard/Product/AddProduct";
+import ManageProduct from "../pages/Dashboard/Product/ManageProduct";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
             {
                 path: "additem",
                 element: <AddProduct></AddProduct>
+            },
+            {
+                path: "manageproduct",
+                element: <ManageProduct />
             }
 
         ]

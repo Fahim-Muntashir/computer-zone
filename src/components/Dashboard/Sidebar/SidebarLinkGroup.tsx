@@ -50,7 +50,7 @@ const SidebarLinkGroup = () => {
                                 </li>
                                 <li className="">
 
-                                    <Link to={"dashboard/manageitem"} className="px-4 py-1 text-gray-700 hover:bg-gray-100 cursor-pointer flex items-center ps-10 gap-3 font-light">
+                                    <Link to={"manageproduct"} className="px-4 py-1 text-gray-700 hover:bg-gray-100 cursor-pointer flex items-center ps-10 gap-3 font-light">
                                         <MdManageSearch />
                                         <span>Manage</span>
                                     </Link>

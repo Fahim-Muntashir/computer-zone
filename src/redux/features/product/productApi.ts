@@ -1,17 +1,30 @@
 import { baseApi } from "../../api/baseApi";
 
-
 const productApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
-        product: builder.mutation({
+        postProduct: builder.mutation({
             query: (productInfo) => ({
                 url: "/product/",
                 method: "POST",
-                body:productInfo,
-            
+                body: productInfo,
             }),
         }),
-    }),
-})
 
-export const { useProductMutation} = productApi;
+        getAllProducts: builder.query({
+            query: () => ({
+                url: "/product/",
+                method: "GET",
+            }),
+        }),
+
+        deleteSingleProduct: builder.mutation({
+            query: (id) => ({
+                url: `/product/${id}`,
+                method: "DELETE",
+            }),
+        })
+        
+    }),
+});
+
+export const { usePostProductMutation, useGetAllProductsQuery ,useDeleteSingleProductMutation} = productApi;
