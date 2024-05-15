@@ -22,7 +22,7 @@ const ManageProduct = () => {
         return <div>Loading...</div>;
     }
 
-    // Problem 1  Ts 
+    // Problem 1  Ts
     if (error) {
         return <div>Error: {error?.name}</div>;
     }

@@ -63,7 +63,7 @@ const TableItem = ({ product, refetch }: { product: TInputs, refetch: any }) => 
                         </svg>
                     </button>
                     {isDropdownOpen && (
-                        <ul className="absolute  py-2 w-40 md:me-0 mt-24  me-60 bg-white rounded shadow-lg">
+                        <ul className="absolute py-2 w-40 md:me-0 mt-24  me-60 bg-white rounded shadow-lg">
 
                             <li >
                                 <button onClick={() => handleDelete(id)} className="px-7 py-1 text-red-700 hover:bg-gray-100 cursor-pointer flex items-center gap-3 font-light">
@@ -77,7 +77,7 @@ const TableItem = ({ product, refetch }: { product: TInputs, refetch: any }) => 
                             </li>
                             <li className="">
 
-                                <Link to={"manageproduct"} className="px-4 border-t py-1 text-gray-700 hover:bg-gray-100 cursor-pointer flex items-center ps-10 gap-3 font-light">
+                                <Link to={`${id}`} className="px-4 border-t py-1 text-gray-700 hover:bg-gray-100 cursor-pointer flex items-center ps-10 gap-3 font-light">
                                     <span className='text-xl'>
                                         <BiEdit />
 

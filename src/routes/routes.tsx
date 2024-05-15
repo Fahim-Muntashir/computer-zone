@@ -4,6 +4,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import AddProduct from "../pages/Dashboard/Product/AddProduct";
 import ManageProduct from "../pages/Dashboard/Product/ManageProduct";
+import UpdateProduct from "../pages/Dashboard/Product/EditProduct";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,9 @@ const router = createBrowserRouter([
             {
                 path: "manageproduct",
                 element: <ManageProduct />
+            }, {
+                path: "manageproduct/:id",
+                element: <UpdateProduct></UpdateProduct>
             }
 
         ]
