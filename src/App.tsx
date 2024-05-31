@@ -6,6 +6,7 @@ function App() {
 
   return (
     <>
+
       <ProtectedRoute>
         <Toast></Toast>
         <DashboardLayout></DashboardLayout>

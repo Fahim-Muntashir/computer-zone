@@ -5,9 +5,14 @@ import Login from "../pages/Login/Login";
 import AddProduct from "../pages/Dashboard/Product/AddProduct";
 import ManageProduct from "../pages/Dashboard/Product/ManageProduct";
 import UpdateProduct from "../pages/Dashboard/Product/EditProduct";
+import MainLayout from "../layout/MainLayout";
 
 const router = createBrowserRouter([
     {
+        path: "/",
+        element: <MainLayout></MainLayout>
+    }
+    , {
         path: '/dashboard',
         element: <App></App>,
         children: [
