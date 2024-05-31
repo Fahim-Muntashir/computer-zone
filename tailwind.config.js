@@ -11,12 +11,10 @@ export default withMT({
   ],
   theme: {
     colors: {
-      primary: "#5c6ac4",
-      back: "#1c2434",
-      secondary: "#ecc94b",
-      // ...
+      primary: "#ffff",
+      back: "#ffff",
+      secondary: "#ffff",
     },
   },
-
   plugins: [require("flowbite/plugin")],
 });
