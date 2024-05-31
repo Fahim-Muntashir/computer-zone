@@ -6,11 +6,18 @@ import AddProduct from "../pages/Dashboard/Product/AddProduct";
 import ManageProduct from "../pages/Dashboard/Product/ManageProduct";
 import UpdateProduct from "../pages/Dashboard/Product/EditProduct";
 import MainLayout from "../layout/MainLayout";
+import Home from "../pages/Home/Home";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout></MainLayout>
+        element: <MainLayout></MainLayout>,
+        children: [
+            {
+                path: '/',
+                element: <Home />
+            },
+        ]
     }
     , {
         path: '/dashboard',

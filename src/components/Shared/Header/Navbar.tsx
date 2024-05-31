@@ -6,6 +6,7 @@ import { MdOutlineEmail } from 'react-icons/md';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import Container from '../Container';
 
 
 
@@ -68,71 +69,72 @@ const Navbar = () => {
             <div className='bg-[#003461]'>
 
 
-                <div className=' justify-between text-[#fafafaf4] hidden  lg:flex'>
-                    <div className='flex gap-x-4'>
-                        {
-                            socialLink.map((item) => (
-                                <a href="" className=' border-x-[1px] px-2 py-1 border-gray-600'> {
-                                    item.icon
-                                }
-                                </a>
-                            ))
-                        }
-
-                    </div>
-                    <div className="text-sm flex gap-x-2">
-                        {
-                            contactNav.map((item) => (
-
-                                <a href="" className=' border-x-[1px] px-2 py-1 border-gray-600 flex items-center gap-x-3 text-sm'> <span className='text-lg'>
-                                    {
+                <Container>
+                    <div className=' justify-between text-[#fafafaf4] hidden  lg:flex'>
+                        <div className='flex gap-x-4'>
+                            {
+                                socialLink.map((item) => (
+                                    <a href="" className=' border-x-[1px] px-2 py-1 border-gray-600'> {
                                         item.icon
                                     }
-                                </span> <span> {
-                                    item.name
-                                }</span>
-                                </a>
+                                    </a>
+                                ))
+                            }
+
+                        </div>
+                        <div className="text-sm flex gap-x-2">
+                            {
+                                contactNav.map((item) => (
+
+                                    <a href="" className=' border-x-[1px] px-2 py-1 border-gray-600 flex items-center gap-x-3 text-sm'> <span className='text-lg'>
+                                        {
+                                            item.icon
+                                        }
+                                    </span> <span> {
+                                        item.name
+                                    }</span>
+                                    </a>
 
 
 
-                            ))
-                        }
-                    </div>
+                                ))
+                            }
+                        </div>
 
-                </div>
+                    </div></Container>
             </div>
             {/* Main Nav */}
             <div className='bg-[#00396B] text-white'>
+                <Container>
 
+                    <div className='flex justify-between items-center py-2'>
+                        <h1>ho</h1>
+                        <div className={`items-center justify-between hidden w-full  md:flex md:w-auto sticky `} id="navbar-sticky">
+                            <ul className="flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+                                <li>
+                                    <a href="#" className="block py-2 px-3 " aria-current="page">Home</a>
+                                </li>
+                                <li>
+                                    <Link to="/properties" className="block py-2 px-3  " >Properties</Link>
+                                </li>
+                                <li>
+                                    <a href="#" className="block py-2 px-3 ">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#" className="block py-2 px-3">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <button className='bg-[rgb(0,174,255)]  px-6 py-1 font-bold'>Login</button>
+                            <button onClick={() => setOpen(true)} className={`${open ? "hidden" : ""} md:hidden px-3`} > <GiHamburgerMenu />
+                            </button>
+                            <button onClick={() => setOpen(false)} className={`${open ? "" : "hidden"} md:hidden px-3`}><IoMdClose />
+                            </button>
 
-                <div className='flex justify-between items-center py-2'>
-                    <h1>ho</h1>
-                    <div className={`items-center justify-between hidden w-full  md:flex md:w-auto sticky `} id="navbar-sticky">
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
-                            <li>
-                                <a href="#" className="block py-2 px-3 " aria-current="page">Home</a>
-                            </li>
-                            <li>
-                                <Link to="/properties" className="block py-2 px-3  " >Properties</Link>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 px-3 ">Services</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 px-3">Contact</a>
-                            </li>
-                        </ul>
+                        </div>
                     </div>
-                    <div>
-                        <button className='bg-[rgb(0,174,255)]  px-6 py-1 font-bold'>Login</button>
-                        <button onClick={() => setOpen(true)} className={`${open ? "hidden" : ""} md:hidden px-3`} > <GiHamburgerMenu />
-                        </button>
-                        <button onClick={() => setOpen(false)} className={`${open ? "" : "hidden"} md:hidden px-3`}><IoMdClose />
-                        </button>
-
-                    </div>
-                </div>
-
+                </Container>
 
             </div >
             <div className={`${open ? 'w-[80%] ms-0 transition-all  delay-150' : ''} bg-[#003461] px-3 py-10  text-white -ms-[500px] fixed h-screen flex flex-col z-10 justify-between`}>
