@@ -36,7 +36,7 @@ const MiniNav = () => {
 
         <Container>
             <div className='sm:hidden md:visible justify-between text-[#050505f4]  lg:flex'>
-                <div className='flex gap-x-4 py-3 text-gray-900 '>
+                <div className='flex gap-x-4 py-1 text-gray-900 '>
 
                     {
                         about.map((item) => (

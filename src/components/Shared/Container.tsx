@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-
-
 const Container = ({ children }: Readonly<{
     children: ReactNode;
 }>) => {

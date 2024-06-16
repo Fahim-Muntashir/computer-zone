@@ -1,9 +1,13 @@
+import Company from "../../components/Section/Company";
+import Container from "../../components/Shared/Container";
+import Banner from "./Banner";
 
 const Home = () => {
     return (
-        <div>
-            aasdf
-        </div>
+        <Container>
+            <Banner></Banner>
+            <Company></Company>
+        </Container>
     );
 };
 
